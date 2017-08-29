@@ -11,7 +11,7 @@
 	#endif
 	
 	#ifdef __DEBUG__
-		#define CMLog(format, ...) NSLog(@"(%s) in [%s:%d] ::: %@", __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:format, ## __VA_ARGS__])
+		#define CMLog(format, ...) CCLOG(@"(%s) in [%s:%d] ::: %@", __PRETTY_FUNCTION__, __FILE__, __LINE__, [NSString stringWithFormat:format, ## __VA_ARGS__])
 		#define MARK	CMLog(@"%s", __PRETTY_FUNCTION__);
 		#define START_TIMER NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
 		#define END_TIMER(msg) 	NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; CMLog([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start])
@@ -20,7 +20,7 @@
 		#define MARK
 		#define START_TIMER
 		#define END_TIMER(msg)
-		//#define NSLog(...)
+		//#define CCLOG(...)
 	#endif
 
 	#define NB [NSBundle mainBundle]
