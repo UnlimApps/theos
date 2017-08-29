@@ -18,10 +18,10 @@ sub declarations {
 	my $group = shift;
 	my $return = "";
 	return "" if scalar(keys %{$group->usedMetaClasses}) + scalar(keys %{$group->usedClasses}) + scalar(keys %{$group->declaredOnlyClasses}) == 0;
-	foreach(keys %{$group->usedMetaClasses}) {
+	foreach(sort keys %{$group->usedMetaClasses}) {
 		$return .= $self->_methodForClassWithScope($_, "+");
 	}
-	foreach(keys %{$group->usedClasses}) {
+	foreach(sort keys %{$group->usedClasses}) {
 		$return .= $self->_methodForClassWithScope($_, "-");
 	}
 	return $return;

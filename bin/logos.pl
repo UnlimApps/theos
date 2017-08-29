@@ -485,6 +485,8 @@ foreach my $line (@lines) {
 					$scope = $1;
 					$classname = $';
 				}
+				
+				fileWarning($lineno, "CLASS NAME: $classname");
 
 				my $class = $group->getClassNamed($classname);
 				if(!defined($class)) {
@@ -580,7 +582,7 @@ if(@firstDirectivePosition) {
 	$patch->line($line);
 	my @patchsource = ();
 	push(@patchsource, Patch::Source::Generator->new(undef, 'preamble')) if !$hasGeneratorPreamble;
-	push(@patchsource, Patch::Source::Generator->new(undef, 'generateClassList', keys %classes));
+	push(@patchsource, Patch::Source::Generator->new(undef, 'generateClassList', sort keys %classes));
 	push(@patchsource, Patch::Source::Generator->new($groups[0], 'declarations'));
 	push(@patchsource, Patch::Source::Generator->new($staticClassGroup, 'declarations'));
 	$patch->source(\@patchsource);
