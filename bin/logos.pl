@@ -628,7 +628,7 @@ for(@sortedPatches) {
 	$_->apply(\@lines);
 }
 
-splice(@lines, 0, 0, generateLineDirectiveForPhysicalLine(0)) if !$preprocessed;
+splice(@lines, 0, 0) if !$preprocessed;
 foreach my $oline (@lines) {
 	print $oline."\n" if defined($oline);
 }

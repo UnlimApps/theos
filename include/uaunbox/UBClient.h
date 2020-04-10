@@ -2,7 +2,7 @@
 // UBClient.h
 // UAUnbox
 //
-// Created by Enea Gjoka on 09/14/14
+// Created by UnlimApps Inc on 09/14/14
 // Licensed under a CreativeCommons Attribution 3.0 Unported License
 //
 

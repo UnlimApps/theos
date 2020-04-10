@@ -2,7 +2,7 @@
 // uaunbox.h
 // UAUnbox
 //
-// Created by Enea Gjoka on 09/14/14
+// Created by UnlimApps Inc on 09/14/14
 //
 
 #import <CoreFoundation/CoreFoundation.h>

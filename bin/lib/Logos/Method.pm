@@ -123,6 +123,7 @@ sub printArgForArgType {
 	return "NSStringFromSelector($argname)" if $argtype =~ /^SEL$/;
 	return "$argname.location, $argname.length" if $argtype =~ /^NSRange$/;
 	return "$argname.origin.x, $argname.origin.y, $argname.size.width, $argname.size.height" if $argtype =~ /^(CG|NS)Rect$/;
+	return "NSStringFromClass($argname)" if $argtype =~ /^Class$/;
 	return "$argname.x, $argname.y" if $argtype =~ /^(CG|NS)Point$/;
 	return "$argname.width, $argname.height" if $argtype =~ /^(CG|NS)Size$/;
 
@@ -175,6 +176,7 @@ sub formatCharForArgType {
 	
 	# Special Types (should also have an entry in printArgForArgType
 	return "%@" if /^SEL$/;
+	return "%@" if /^Class$/;
 
 	# Even-more-special expanded types
 	return "(%d:%d)" if /^NSRange$/;

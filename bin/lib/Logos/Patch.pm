@@ -83,7 +83,7 @@ sub apply {
 	my $source = $self->{SOURCE};
 	my @lines = $self->evalSource($source);
 	if(!defined $start) {
-		push(@lines, ::generateLineDirectiveForPhysicalLine($line));
+		# push(@lines, ::generateLineDirectiveForPhysicalLine($line));
 		if($self->{SQUASH}) {
 			push(@$lref, join('', @lines));
 		} else {
